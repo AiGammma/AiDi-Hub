@@ -1,6 +1,6 @@
-# AiDi Skills
+# AiDi Hub
 
-Agent skills for product designers, by Aigul Gambarova.
+Skills and tools for product design work, by Aigul Gambarova (AiDi).
 
 ## Skills
 
@@ -10,8 +10,16 @@ Agent skills for product designers, by Aigul Gambarova.
 
 ## Install
 
+All skills:
+
 ```bash
-npx skills add AiGammma/AiDi
+npx skills add AiGammma/AiDi-Hub
+```
+
+One skill:
+
+```bash
+npx skills add AiGammma/AiDi-Hub --skill design-hypothesis
 ```
 
 Works with Claude Code and other agents that support `SKILL.md`.
