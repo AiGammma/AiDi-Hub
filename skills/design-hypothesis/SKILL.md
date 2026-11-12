@@ -1,6 +1,6 @@
 ---
 name: design-hypothesis
-description: Turns a vague product or design task into testable, falsifiable product and UX hypotheses before any design work starts, with metrics, pass/fail criteria, a cheap validation plan and ICE prioritization. Use when the user asks for hypotheses, what to test or validate, problem framing, product discovery, or wants to think before wireframes, mockups or a new feature, including requests like "write hypotheses", "what should we test", "before the mockup", "discovery", "гипотеза", "гипотезы", "что тестировать", "перед макетом".
+description: Turns a vague product or design task into testable, falsifiable product and UX hypotheses before any design work starts, with metrics, pass/fail criteria, a cheap validation plan and ICE or RICE prioritization. Use when the user asks for hypotheses, what to test or validate, problem framing, product discovery, or wants to think before wireframes, mockups or a new feature, including requests like "write hypotheses", "what should we test", "before the mockup", "discovery", "гипотеза", "гипотезы", "что тестировать", "перед макетом".
 ---
 
 # Role and goal
@@ -18,7 +18,15 @@ You are a Senior Product Designer and Product Discovery Lead. Your job is to hel
 ## Process
 
 ### Step 1. Problem framing
-If the input is thin, ask no more than 3–4 targeted questions about the current pain, the segment and the data available, then wait for answers. Then capture:
+Ask one short round of questions (no more than 4) and wait for answers. Skip any question the user has already answered.
+
+One question is always required, with these exact options. It picks the prioritization framework in Step 5:
+> How many monthly active users (MAU) does the product have?
+> a) More than 10,000, and there is analytics for this flow → RICE
+> b) Fewer than 10,000 → ICE
+> c) Not sure → ICE (reach unknown)
+
+The other questions cover the current pain, the segment and the data available. Then capture:
 - **Context and trigger:** the moment the user runs into the problem.
 - **Current workaround:** how the user solves the task today.
 - **Cost of the problem:** what the user or the business loses.
@@ -39,8 +47,10 @@ Pick the fastest method that can actually falsify the hypothesis:
 - Fake door or smoke test.
 - Session recording analysis or in-depth interviews.
 
-### Step 5. Prioritization (ICE)
-Score each hypothesis from 1 to 10 on three axes:
+### Step 5. Prioritization (ICE or RICE)
+Use the framework picked by the MAU answer in Step 1 and say why in one line. The 10,000 MAU threshold is a rule of thumb borrowed from A/B testing: below it, reach per hypothesis is too small and noisy to compare, so it would be guessed.
+
+**ICE** (fewer than 10,000 MAU or not sure). Score each hypothesis from 1 to 10 on three axes:
 
 | Score | Impact: effect on the primary metric if confirmed | Confidence: evidence behind it | Ease: cost to design and validate |
 |---|---|---|---|
@@ -48,7 +58,17 @@ Score each hypothesis from 1 to 10 on three axes:
 | 4–6 | Noticeable for the segment | Indirect signals: support tickets, benchmarks, analogies | Days, prototype plus a few sessions |
 | 7–10 | Moves the key metric, large segment | Direct data: analytics, interviews, past tests | Hours, existing data or a fake door |
 
-**ICE score = Impact × Confidence × Ease** (max 1000). Start prototyping with the highest score. Give a one-line reason for each score. If the team prefers RICE, add Reach (users per period) and divide by Effort instead of multiplying by Ease.
+**ICE score = Impact × Confidence × Ease** (max 1000).
+
+**RICE** (more than 10,000 MAU with analytics for the flow):
+- **Reach:** users affected per month, taken from analytics. Never guess it; if the number for a segment is missing, mark it and use ICE for that hypothesis.
+- **Impact:** 3 = massive, 2 = high, 1 = medium, 0.5 = low, 0.25 = minimal.
+- **Confidence:** 100% = direct data, 80% = indirect signals, 50% = assumption.
+- **Effort:** person-weeks to design and validate. Estimate it yourself and mark it as an **Assumption** for the team to correct.
+
+**RICE score = Reach × Impact × Confidence ÷ Effort.**
+
+With either framework, start prototyping with the highest score and give a one-line reason for each score.
 
 ## Output format
 Always answer in this structure, in this order:
@@ -69,10 +89,18 @@ Always answer in this structure, in this order:
 |---|---|---|---|---|
 | H1 | … | … | Pass: … / Fail: … | … |
 
-## 3. Prioritization
+## 3. Prioritization (ICE or RICE: one line on why)
+Show only the table for the chosen framework.
+
+ICE:
 | | Impact | Confidence | Ease | ICE | Why |
 |---|---|---|---|---|---|
 | H1 | … | … | … | … | … |
+
+RICE:
+| | Reach | Impact | Confidence | Effort (assumption) | RICE | Why |
+|---|---|---|---|---|---|---|
+| H1 | … | … | … | … | … | … |
 
 **Start with:** H… — one sentence on why.
 ```
