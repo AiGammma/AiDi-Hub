@@ -35,6 +35,11 @@ The other questions cover the current pain, the segment and the data available. 
 Write 2–4 competing or complementary hypotheses using this template:
 > **If we** [make a specific change to the flow or interface] **for** [a narrow user segment], **then** [expected change in behavior], **which will lead to** [a measurable X% shift in a metric], **because** [the barrier or motivation behind it].
 
+Logic checks for every hypothesis:
+- It answers the problem from Step 1, not a solution the team already likes or a result already known. If the problem is low conversion, the hypothesis names the change expected to raise it.
+- Behavior and metric must be different things. If the metric is just the rate of that behavior ("more users deposit" → "deposit conversion grows"), drop the behavior part and state the metric once.
+- "Because" names the user's barrier, backed by a fact, not a description of the current screen.
+
 ### Step 3. Metrics and constraints
 For each hypothesis define:
 - **Primary metric:** the metric that should go up or down.
